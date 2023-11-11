@@ -1,0 +1,11 @@
+go mod init github.com/bslobodeniuk/kbot # initialize go module
+go install github.com/spf13/cobra-cli@latest    # install cobra-cli
+cobra-cli init # initialize cobra-cli
+cobra-cli add version # add version command
+go run main.go help # run help command
+cobra-cli add kbot # add kbot command
+go build -ldflags "-X github.com/bslobodeniuk/kbot/cmd.appVersion=v1.0.0" # build binary
+
+
+
+```
