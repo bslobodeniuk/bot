@@ -8,8 +8,5 @@ go build -ldflags "-X github.com/bslobodeniuk/kbot/cmd.appVersion=v1.0.0" # buil
 
 gofmt -s -w ./ # format code
 go get # get dependencies
+./kbot start # run kbot
 
-read -s TELE_TOKEN # read env variable
-export TELE_TOKEN # set env variable
-./kbot start
-```
