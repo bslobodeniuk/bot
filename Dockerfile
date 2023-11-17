@@ -1,4 +1,6 @@
 FROM golang as builder
+ARG GITHUB_USERNAME
+
 WORKDIR /go/src/app
 COPY . .
 RUN make build
