@@ -6,6 +6,8 @@ URL: http://t.me/bslobodeniuk_bot
 - github.com/spf13/cobra
 - github.com/tucnak/telebot
 ```
+0. To build kbot:
+- make build
 
 To use this telegram bot on your environment:
 1. Register telegram bot with the BotFather and get token.

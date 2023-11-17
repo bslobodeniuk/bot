@@ -24,5 +24,6 @@ image:
 
 push:
 	docker push ${REGISTRY}/${APP}:${VERSION}-$(GOARCH)
+
 clean:
 	rm -rf kbot
