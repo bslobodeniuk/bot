@@ -13,10 +13,13 @@ lint:
 test:
 	go test -v
 
+init:
+	go mod init github.com/bslobodeniuk/kbot
+
 get:
 	go get
 
-build: format get
+build: format init get
 	CGO_ENABLED=0 GOOS=$(GOOS) GOARCH=$(GOARCH) go build -v -o kbot -ldflags "-X="github.com/bslobodeniuk/kbot/cmd.appVersion=${VERSION}
 
 image:
@@ -26,4 +29,4 @@ push:
 	docker push ${REGISTRY}/${APP}:${VERSION}-$(GOARCH)
 
 clean:
-	rm -rf kbot
+	rm -rf kbot go.mod go.sum
