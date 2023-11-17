@@ -1,4 +1,4 @@
-FROM golang as builder
+FROM quay.io/projectquay/golang:1.20 as builder
 ARG GITHUB_USERNAME
 
 WORKDIR /go/src/app
