@@ -1,9 +1,8 @@
 FROM quay.io/projectquay/golang:1.20 as builder
-ARG GITHUB_USERNAME
 
 WORKDIR /go/src/app
 COPY . .
-RUN make build
+RUN make go
 
 FROM scratch
 WORKDIR /

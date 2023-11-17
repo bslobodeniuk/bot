@@ -13,8 +13,6 @@ brew install go
 read -s TELE_TOKEN 
 ```
 
-
-
 2. Login into GitHub Container Registry:
 
 -  Set environment variable for your Personal GitHub access tokens (classic) by commands: 
@@ -22,14 +20,14 @@ read -s TELE_TOKEN
 read -s PAT
 ```
 
-- Set environment variable for your GitHub username by commands:
+- Set GITHUB_USERNAME variable in Makefile:
 ```sh
-read GITHUB_USERNAME
+ex.: GITHUB_USERNAME=your_github_username
 ```
 
 - Login to GitHub Container Registry: 
 ```sh
-echo $PAT | docker login ghcr.io -u $GITHUB_USERNAME --password-stdin
+echo $PAT | docker login ghcr.io -u your_github_username --password-stdin
 ```
 
 1. Use make command to build, test, push and clean up:
