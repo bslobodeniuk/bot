@@ -1,4 +1,4 @@
-name: KBOT-CICD-new
+name: pipeline
 
 on: push
 
