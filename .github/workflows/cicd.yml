@@ -43,13 +43,13 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          repo-token: ${{ secrets.GHCR_PAT }}
+          token: ${{ secrets.GHCR_PAT }}
       - run: echo "VERSION=$(git describe --tags --abbrev=0)-$(git rev-parse --short HEAD)" >> $GITHUB_ENV
 
       - uses: mikefarah/yq@master
         with:
           cmd: yq -i '.image.tag=strenv(VERSION) | .image.arch=strenv(TARGETARCH)' helm/kbot/values.yaml
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
       - run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
